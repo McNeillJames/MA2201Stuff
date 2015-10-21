@@ -14,6 +14,11 @@ v(1) = 1;
 
 y = D1\v;
 
+
 exactX = linspace(-1, 1, 2050);
 exactY = exp(-2*(1+exactX));
 plot(x, y, exactX, exactY, 'r');
+
+T = cos(acos(x) * (1:N));
+x = T\y;
+loglog(1:N)
