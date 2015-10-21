@@ -1,4 +1,4 @@
-N = 50;
+N = 25;
 
 [D,x] = cheb(N - 1);
 
@@ -19,6 +19,6 @@ exactX = linspace(-1, 1, 2050);
 exactY = exp(-2*(1+exactX));
 plot(x, y, exactX, exactY, 'r');
 
-T = cos(acos(x) * (1:N));
-x = T\y;
-loglog(1:N)
+T = cos(acos(x) * (0:N-1));
+a = T\y;
+loglog(1:N, abs(a));
